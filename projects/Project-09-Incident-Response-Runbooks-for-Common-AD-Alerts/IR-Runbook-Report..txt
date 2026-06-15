@@ -1,0 +1,47 @@
+INCIDENT RESPONSE REPORT
+
+Incident Type:
+Brute Force / Password Spray Activity
+
+Detection:
+Multiple Event ID 4625 entries detected.
+
+Investigation:
+Reviewed failed authentication attempts originating from CLIENT01.
+
+Scope:
+Single user affected.
+No evidence of lateral movement.
+
+Containment:
+Verified account status.
+Unlocked account where required.
+
+Recovery:
+User successfully authenticated after password verification.
+
+Lessons Learned:
+Continue monitoring for repeated authentication failures.
+
+------------------------------------------------
+
+Incident Type:
+Privileged Group Membership Change
+
+Detection:
+Event ID 4732 detected.
+
+Investigation:
+Reviewed IT_Admins membership changes.
+
+Scope:
+One account added to privileged group.
+
+Containment:
+Verified authorization.
+
+Recovery:
+No corrective action required.
+
+Lessons Learned:
+Monitor privileged group changes continuously.
