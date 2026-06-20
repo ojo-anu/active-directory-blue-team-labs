@@ -1,0 +1,72 @@
+DEFENSIVE ACTIVE DIRECTORY EXPOSURE REVIEW
+
+Review Date:
+[Insert Date]
+
+1. Domain Admin Review
+
+Finding:
+Domain Admin membership reviewed.
+
+Risk:
+Excessive Domain Admin privileges increase attack surface.
+
+Recommendation:
+Restrict Domain Admin membership to essential administrators only.
+
+------------------------------------------------
+
+2. IT_Admins Review
+
+Finding:
+Group membership reviewed.
+
+Risk:
+Unauthorized administrative accounts may exist.
+
+Recommendation:
+Review memberships regularly.
+
+------------------------------------------------
+
+3. Password Policy Review
+
+Finding:
+Password complexity enabled.
+
+Risk:
+Weak passwords increase risk of compromise.
+
+Recommendation:
+Maintain strong password requirements.
+
+------------------------------------------------
+
+4. Account Lockout Review
+
+Finding:
+Account lockout policy enabled.
+
+Risk:
+Brute force attacks.
+
+Recommendation:
+Continue enforcing lockout thresholds.
+
+------------------------------------------------
+
+5. Service Account Review
+
+Finding:
+No unmanaged service accounts identified.
+
+Recommendation:
+Implement service account monitoring.
+
+------------------------------------------------
+
+Overall Security Posture:
+
+Moderate Risk
+
+Environment demonstrates good administrative controls with opportunities for continued hardening.
