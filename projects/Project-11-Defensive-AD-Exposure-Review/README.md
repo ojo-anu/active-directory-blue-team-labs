@@ -1,8 +1,8 @@
-# Project 11 – Defensive AD Exposure Review
+# Project 11 & 12 – Defensive AD Exposure Review and Domain Controller Hardening
 
 ## Objective
 
-Perform a defensive security assessment of an Active Directory environment by reviewing privileged access, password policies, account configurations, and overall security exposure. The goal is to identify potential risks and recommend security best practices for improving the environment.
+Perform a defensive security assessment of an Active Directory environment and validate the security hardening measures implemented on the Domain Controller. The objective is to review administrative access, password policies, account security, audit policies, and Domain Controller configurations while documenting security recommendations and hardening best practices.
 
 ## Lab Environment
 
@@ -21,123 +21,151 @@ corp.lab
 * Active Directory Users and Computers (ADUC)
 * Active Directory Administrative Center (ADAC)
 * Group Policy Management Console (GPMC)
-* Windows Server 2022
-
-## Security Review Performed
-
-### 1. Domain Admin Group Review
-
-Reviewed the members of the Domain Admins group to identify privileged accounts and evaluate whether administrative access was appropriately restricted.
-
-**Security Recommendation:**
-
-* Limit Domain Admin membership to only essential administrative accounts.
-* Regularly review privileged groups.
+* Windows Defender Firewall
+* Windows Security Policies
 
 ---
 
-### 2. IT_Admins Group Review
+## Security Assessment Performed
 
-Reviewed the membership of the IT_Admins security group to verify authorized administrative access and identify unnecessary or inactive accounts.
+### Domain Admin Review
 
-**Security Recommendation:**
+Reviewed the Domain Admins group to verify privileged access assignments.
 
-* Periodically audit privileged group memberships.
-* Remove unused or unauthorized accounts.
+**Finding:**
+No excessive privileged accounts identified.
 
----
-
-### 3. Disabled and Dormant Account Review
-
-Examined Active Directory for disabled and inactive accounts that could become security risks if left unmanaged.
-
-**Security Recommendation:**
-
-* Disable or remove inactive accounts.
-* Review dormant accounts regularly.
+**Recommendation:**
+Continue applying the Principle of Least Privilege and perform periodic reviews of privileged groups.
 
 ---
 
-### 4. Password Policy Review
+### IT_Admins Group Review
 
-Reviewed the Default Domain Password Policy including:
+Reviewed the IT_Admins security group membership.
+
+**Finding:**
+Administrative group membership was reviewed and no unauthorized users were identified.
+
+**Recommendation:**
+Audit privileged groups regularly and remove unused accounts.
+
+---
+
+### Password Policy Review
+
+Reviewed:
 
 * Password Complexity Requirements
 * Minimum Password Length
 * Password History
 * Maximum Password Age
 
-**Security Recommendation:**
+**Finding:**
+Password policies were properly configured and enforced.
 
-* Enforce strong password policies.
-* Maintain password history and complexity requirements.
+**Recommendation:**
+Maintain strong password requirements and continue periodic reviews.
 
 ---
 
-### 5. Account Lockout Policy Review
+### Account Lockout Policy Review
 
-Reviewed account lockout settings to ensure protection against brute force attacks.
-
-Verified:
+Reviewed:
 
 * Account Lockout Threshold
 * Lockout Duration
-* Reset Counter After
+* Reset Counter
 
-**Security Recommendation:**
+**Finding:**
+Brute force protection is enabled through account lockout policies.
 
-* Maintain account lockout policies to reduce password attack risks.
-
----
-
-### 6. Service Account Review
-
-Reviewed the environment for service accounts and evaluated whether service accounts were appropriately managed.
-
-**Security Recommendation:**
-
-* Monitor service accounts regularly.
-* Apply least privilege principles.
+**Recommendation:**
+Continue enforcing lockout policies to reduce password attack risks.
 
 ---
 
-### 7. Computer Object Review
+### Remote Desktop Review
 
-Reviewed computer objects within the domain to identify inactive or unauthorized devices.
+Reviewed Remote Desktop configuration on the Domain Controller.
 
-**Security Recommendation:**
+**Finding:**
+Administrative access was reviewed and restricted to authorized users.
 
-* Remove stale computer accounts.
-* Regularly review domain-joined systems.
+**Recommendation:**
+Continue restricting RDP access to trusted administrators only.
 
 ---
 
-## Security Findings Summary
+### Windows Firewall Review
 
-The Active Directory environment demonstrates foundational security controls including:
+Reviewed Windows Defender Firewall and inbound rules.
 
-* Restricted administrative groups
-* Password complexity enforcement
-* Account lockout policies
-* Centralized user and group management
+**Finding:**
+Firewall protection is enabled and only required services are permitted.
 
-Potential improvements include:
+**Recommendation:**
+Continue reviewing firewall rules and disable unnecessary services.
 
-* Routine privileged access reviews
-* Continuous monitoring of dormant accounts
-* Regular audits of service accounts and computer objects
+---
+
+### Audit Policy Review
+
+Reviewed Advanced Audit Policies including:
+
+* Logon Events
+* Account Management
+* Policy Changes
+* Authentication Auditing
+
+**Finding:**
+Security auditing is enabled and provides visibility into authentication and administrative activities.
+
+**Recommendation:**
+Maintain auditing and review logs regularly.
+
+---
+
+## Security Hardening Validation
+
+The Domain Controller was reviewed against Active Directory security best practices.
+
+Validated controls include:
+
+* Restricted Domain Admin membership
+* Strong Password Policies
+* Account Lockout Protection
+* Firewall Enabled
+* Remote Desktop Security
+* Security Auditing Enabled
+* Privileged Access Review
+
+---
+
+## Overall Security Posture
+
+Risk Level:
+
+LOW
+
+The Active Directory environment demonstrates strong baseline security controls and follows recommended hardening practices for administrative access, authentication policies, and Domain Controller security.
+
+---
 
 ## Skills Demonstrated
 
 * Active Directory Security Assessment
-* Privileged Access Review
-* Password Policy Analysis
-* Account Security Auditing
-* Exposure Management
+* Domain Controller Hardening
+* Privileged Access Management
+* Password Policy Management
+* Account Lockout Configuration
+* Security Auditing
+* Windows Firewall Administration
 * Security Documentation
-* Defensive Administration
 * Blue Team Fundamentals
+
+---
 
 ## Outcome
 
-Successfully performed a defensive Active Directory exposure review by assessing privileged groups, password policies, account security settings, and domain configurations. Documented findings and recommended security improvements to strengthen the overall security posture of the environment.
+Successfully performed a defensive Active Directory exposure review and validated Domain Controller hardening configurations. The environment was assessed against security best practices and demonstrated strong baseline protections with no critical security findings.
